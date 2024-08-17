@@ -1,1 +1,9 @@
-<p>movie-list works!</p>
+<section class="movie-list-container">
+  @if(isLoading){
+  <h1>Loading...</h1>
+  } @for (movie of moviesList; track movie.movieId){
+  <app-movie [movie]="movie" [id]="movie.movieId" />
+  }
+</section>
+
+<h1>{{ msg }}</h1>
