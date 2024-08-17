@@ -6,4 +6,58 @@
     margin:25px 28px;
   
   }
+  div{
+    display: flex;
+    flex-wrap: wrap;
+    gap:30px;
+    justify-content: space-evenly;
+    padding-top: 10px;
+}
+.input
+{
+    place-content: center;
+}
+.example-form {
+    min-width: 500px;
+    max-width: 1000px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+  .button1 {
+    top: 10%;
+    left: 3%;
+    cursor: pointer;
+    color: White;
+    width: 10%;
+    height: 80%;
+    font-size: 2rem;
+    position: absolute;
+    border: none;
+    background-color: transparent;
+  }
+  .button2 {
+    top: 10%;
+    right: 3%;
+    cursor: pointer;
+    color: white;
+    width: 10%;
+    height: 80%;
+    font-size: 2rem;
+    position: absolute;
+    border: none;
+    background-color: transparent;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+  img {
+    width: 90vw;
+    height: 65vh;
+  }
+  
   
