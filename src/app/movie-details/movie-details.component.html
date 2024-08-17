@@ -44,61 +44,29 @@
     </div>
   </div>
   <div class="about">
-    <h2 style="font-size: xx-large">About the Movie</h2>
+    <h2 style="font-size: xx-large; font-weight: bold">About the Movie</h2>
     {{ movie.synopsis }}
   </div>
   <div class="cast">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ratione aut,
-    obcaecati magni veritatis accusamus laborum fuga neque ipsum rerum ullam
-    adipisci itaque provident beatae porro quos cupiditate vero? Repudiandae
-    consequuntur ad obcaecati laudantium voluptatem alias impedit. Ipsum
-    quisquam provident omnis, totam at repellat reiciendis ratione tenetur
-    voluptatum quo asperiores pariatur suscipit, nihil sequi tempora magni! Quod
-    ullam omnis magnam ab velit veritatis, quis, nesciunt dolorum blanditiis vel
-    suscipit facere officiis. Nobis quae sequi deleniti ducimus asperiores
-    perferendis, amet accusantium iure? Ut aspernatur fugit nihil quaerat esse
-    laborum eos, voluptates eveniet est velit ad et cum sit sapiente aperiam
-    tempora ea. Quae rem fuga a, vel ut quos? Voluptatibus consequatur totam
-    labore, in corrupti a libero eius voluptates! Dolor illum soluta pariatur
-    quas. Excepturi totam perspiciatis unde nam nisi rem eligendi atque,
-    consequatur, quisquam deleniti ipsum omnis tenetur incidunt magnam
-    reprehenderit animi, esse eum quis porro placeat? Assumenda culpa
-    repellendus, fuga sed in laboriosam quam, officia maxime pariatur aspernatur
-    neque illum perferendis aperiam, molestiae nostrum temporibus non velit
-    veniam beatae exercitationem aut doloribus iste? Excepturi, sequi. Dolorem,
-    molestias debitis. Doloribus dolor quod quisquam libero in explicabo modi
-    officiis laboriosam amet mollitia delectus quae saepe distinctio laborum,
-    suscipit iure commodi, sed repudiandae magnam! Provident voluptates placeat
-    dignissimos debitis. Laborum consequuntur non delectus facere! Totam aut
-    quibusdam dicta optio dignissimos accusantium repudiandae recusandae qui
-    quod! Reiciendis quasi nam libero ducimus sapiente eos quidem soluta sed
-    tempore amet esse, consectetur atque provident! Dignissimos totam, optio
-    excepturi libero eveniet quo tempore perferendis voluptate possimus dolorem
-    officia nisi ipsum ex dolor obcaecati rem facilis quod recusandae
-    exercitationem ab, consectetur voluptatibus? Voluptatum sunt quo eos, vel
-    ullam laudantium consectetur distinctio recusandae suscipit, tempora hic
-    dolor natus aliquam ipsam dolorum unde nemo porro inventore et nesciunt
-    corporis fugit amet doloremque? Animi perspiciatis libero, eos dolor labore
-    repellat temporibus maxime facere amet. Consequatur, dignissimos excepturi
-    molestias accusantium magni nemo delectus ducimus ad impedit voluptatem
-    porro velit eveniet culpa non sequi unde. Eaque ullam laboriosam cumque
-    tempore, non possimus maxime. Laboriosam blanditiis maiores explicabo
-    dolores incidunt, necessitatibus illum ab non vel nisi eaque at? Culpa vel
-    numquam laborum quidem blanditiis aut minus rem dolores veritatis
-    praesentium est nisi exercitationem eaque commodi molestias ut dicta maiores
-    odio beatae quo aspernatur quisquam tenetur, consectetur accusamus! Esse
-    ipsum ipsam fugit officia, rerum similique vitae at, mollitia adipisci
-    labore repudiandae! Minima deleniti tenetur, neque expedita a incidunt
-    exercitationem beatae ad quae quasi modi minus distinctio ipsum debitis. A
-    possimus quaerat esse mollitia consequuntur rem nihil illum quisquam,
-    tempora labore ipsam omnis minima cupiditate expedita corrupti voluptatibus
-    aliquid, quod error nulla in. Nulla rem consequuntur dicta dignissimos, nemo
-    sapiente recusandae maiores accusamus quam necessitatibus qui ut. Rerum
-    incidunt est sed libero vero, omnis minima non natus voluptatum ducimus
-    nihil impedit, aperiam magnam eius aliquid quidem molestias. Quia facere
-    alias libero! Natus quo nisi doloribus quos provident tempora, nostrum
-    aperiam illo quidem cum cumque, assumenda illum. Eaque mollitia laborum
-    doloremque officia. Nesciunt distinctio ex nam eveniet sint voluptatum,
-    numquam, nemo sunt dolore minus officiis voluptatibus?
+    <div>
+      <h2 style="font-size: xx-large; font-weight: bold">Cast</h2>
+    </div>
+    <div class="loop">
+      @for (item of movie.cast; track $index) {
+      <div class="info">
+        <div>
+          <img
+            [src]="item.profilePic"
+            alt=""
+            style="height: 200px; width: 200px; border-radius: 50%"
+          />
+        </div>
+        <div>
+          <h3>{{ item.name }}</h3>
+          <p>Actor</p>
+        </div>
+      </div>
+      }
+    </div>
   </div>
 </div>

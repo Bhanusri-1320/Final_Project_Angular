@@ -42,6 +42,7 @@
 // }
 img
 {
+    border-radius: 10px;
     height: 500px;
     padding-bottom: 50px;
 }
@@ -104,14 +105,48 @@ button
     font-size: large;
     font-weight: bold;
 }
-.main-container
-{
+.main-container {
     display: flex;
     flex-direction: column;
+    overflow-y: auto; /* Adds vertical scroll bar if content overflows */
+
     gap: 45px;
+    max-height: 100vh; /* Limits the height to the viewport height */
 }
 .about
 {
-    width: 800px;
-    font-size: medium;
+
+    padding-left: 200px;
+    line-height: 35px;
+    width: 1200px;
+    font-size: 22px;
+}
+.cast
+{
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+    padding-left: 200px;
+    border-top: 1px solid rgb(229, 229, 229);
+    line-height: 35px;
+    width: 1200px;
+    font-size: 22px;
+}
+.profile {
+    // height: 200px;          /* Height of the image */
+    // width: 200px;           /* Width of the image (should be equal to height) */
+    // border-radius: 50%;    /* Makes the image round */
+    // object-fit: cover;     /* Ensures the image covers the circle without distortion */
+    // display: block;        /* Removes extra space below the image */
+}
+.info
+{
+    display: flex;
+    flex-direction: column;
+}
+.loop
+{
+    padding-top: 50px;
+    display: flex;
+    gap: 130px;
 }
