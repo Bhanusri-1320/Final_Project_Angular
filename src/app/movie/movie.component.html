@@ -1,10 +1,15 @@
-<mat-card class="movie-container">
-  <img src="{{ movie.poster }}" alt="{{ movie.title }}" class="movie-poster" />
-  <mat-card-content>
-    <div class="movie-spec">
-      <h2 class="movie-title">
-        {{ movie.title }}
-        <!-- <button
+<div routerLink="/movies/{{ id }}" class="main">
+  <mat-card class="movie-container">
+    <img
+      src="{{ movie.poster }}"
+      alt="{{ movie.title }}"
+      class="movie-poster"
+    />
+    <mat-card-content>
+      <div class="movie-spec">
+        <h2 class="movie-title">
+          {{ movie.title }}
+          <!-- <button
             mat-icon-button
             aria-label="Toggle summary"
             (click)="toggleSummary()"
@@ -14,23 +19,24 @@
             }}</mat-icon>
           </button> -->
 
-        <!-- <button
+          <!-- <button
             mat-icon-button
             aria-label="Details of movie"
             routerLink="/movies/{{ id }}"
           >
             <mat-icon>info</mat-icon>
           </button> -->
-      </h2>
-      <p class="movie-rating">⭐ {{ movie.ratings }}</p>
-    </div>
-    <!--   
+        </h2>
+        <p class="movie-rating">⭐ {{ movie.ratings }}</p>
+      </div>
+      <!--   
       @if(show){
       <p class="movie-summary">{{ movie.summary }}</p>
       }
    -->
-    <div class="action-buttons-container">
-      <!-- <div>
+      <div class="action-buttons-container">
+        <p>{{ movie.language }}</p>
+        <!-- <div>
           <button
             mat-icon-button
             aria-label="Delete movie"
@@ -48,6 +54,7 @@
             <mat-icon>edit</mat-icon>
           </button>
         </div> -->
-    </div>
-  </mat-card-content>
-</mat-card>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

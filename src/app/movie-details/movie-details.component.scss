@@ -1,0 +1,42 @@
+.movie
+{
+    place-content: center;
+    background:  linear-gradient(to right, black, transparent ),
+    url('https://imagesv2.desimartini.com/images/202406/double-ismart-1718453772.jpeg?width=800&quality=50&format=webp');    // background-image: url(https://imagesv2.desimartini.com/images/202406/double-ismart-1718453772.jpeg?width=800&quality=50&format=webp);
+    height: 500px;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    width: 100%;
+    background-size: cover; /* Ensures the image covers the entire viewport */
+    background-position: center right;
+    background-repeat: no-repeat; /* Prevents tiling */
+    object-fit: cover;
+    width: 120vw; /* Sets width to viewport width */
+    height: 50vh; /* Sets height to viewport height */
+    padding-top: 200px;
+    text-align: center;
+}
+.poster{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-repeat: no-repeat;
+width: 100%;
+}
+img{
+    height: 500px;
+    padding-right: 1700px;
+    padding-bottom: 170px;
+}
+.main-container
+{
+}
+.inside
+{
+    display: flex;
+    flex-direction: row;
+}
+.ticket
+{
+    padding-right: 50px;
+    text-align: right;
+}

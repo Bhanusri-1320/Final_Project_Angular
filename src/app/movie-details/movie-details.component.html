@@ -1,0 +1,38 @@
+<!-- <div class="movie-container">
+  <div class="movie-content">
+    <div class="movie-spec">
+      <h2 class="movie-title">
+        {{ movie.title }}
+      </h2>
+      <p class="movie-rating">⭐ {{ movie.rating }}</p>
+    </div>
+    <p class="movie-summary">{{ movie.summary }}</p>
+  </div>
+</div> -->
+
+<div class="main-container">
+  <div class="movie">
+    <div class="poster">
+      <div class="inside">
+        <div>
+          <img [src]="movie.poster" alt="" />
+        </div>
+        <div>
+          <h2>{{ movie.title }}</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cast">Cast</div>
+
+  <div class="ticket">
+    <button
+      style="background-color: rgb(248, 68, 100)"
+      mat-flat-button
+      routerLink="/movies/booktickets"
+    >
+      Book Ticket
+    </button>
+  </div>
+</div>
