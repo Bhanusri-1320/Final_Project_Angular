@@ -3,11 +3,12 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { MoviesService } from '../movies.service';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-movie-details',
   standalone: true,
-  imports: [MatButtonModule, RouterLink],
+  imports: [MatButtonModule, RouterLink, MatIconModule],
   templateUrl: './movie-details.component.html',
   styleUrl: './movie-details.component.scss',
 })

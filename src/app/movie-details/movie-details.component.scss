@@ -1,42 +1,117 @@
+
 .movie
 {
     place-content: center;
-    background:  linear-gradient(to right, black, transparent ),
-    url('https://imagesv2.desimartini.com/images/202406/double-ismart-1718453772.jpeg?width=800&quality=50&format=webp');    // background-image: url(https://imagesv2.desimartini.com/images/202406/double-ismart-1718453772.jpeg?width=800&quality=50&format=webp);
+    background:  linear-gradient(to right, black 20%, transparent 50%),
+    url('https://assets-in.bmscdn.com/iedb/movies/images/mobile/listing/medium/double-ismart-et00398323-1715779331.jpg');    // background-image: url(https://imagesv2.desimartini.com/images/202406/double-ismart-1718453772.jpeg?width=800&quality=50&format=webp);
     height: 500px;
     background-repeat: no-repeat;
-    object-fit: cover;
     width: 100%;
     background-size: cover; /* Ensures the image covers the entire viewport */
-    background-position: center right;
+    background-position:right left;
     background-repeat: no-repeat; /* Prevents tiling */
     object-fit: cover;
     width: 120vw; /* Sets width to viewport width */
-    height: 50vh; /* Sets height to viewport height */
-    padding-top: 200px;
-    text-align: center;
+    height: 65vh; /* Sets height to viewport height */
+    padding-top: 100px;
+    color: white;
 }
-.poster{
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background-repeat: no-repeat;
-width: 100%;
-}
-img{
-    height: 500px;
-    padding-right: 1700px;
-    padding-bottom: 170px;
-}
-.main-container
+// .poster{
+//     padding-top: 20px;
+//     padding-bottom: 20px;
+//     background-repeat: no-repeat;
+// width: 100%;
+// }
+// img{
+//     height: 500px;
+//     padding-right: 1700px;
+//     padding-bottom: 170px;
+// }
+// .main-container
+// {
+// }
+// .inside
+// {
+//     display: flex;
+//     flex-direction: row;
+// }
+// .ticket
+// {
+//     padding-right: 50px;
+//     text-align: right;
+// }
+img
 {
+    height: 500px;
+    padding-bottom: 50px;
 }
 .inside
 {
+    padding-left: 80px;
     display: flex;
     flex-direction: row;
+    gap: 80px;
 }
-.ticket
+.content
 {
-    padding-right: 50px;
-    text-align: right;
+    width: 400px;
+    padding-top: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+h1
+{
+    letter-spacing: 3px;
+    font-size: 50px;
+    font-weight: bold;
+}
+.rating
+{
+    place-content: center;
+    text-align: center;
+    padding-top: 10px;
+    background-color: #333;
+    height: 50px;
+    border-radius: 8px;
+    color: white
+    ;font-size: xx-large;
+}
+h3{
+    font-size: large;
+}
+.language
+{
+    padding-top: 13px;
+    border-radius: 10px;
+    background-color: #e5e5e5;
+    color: black;
+}
+.time
+{
+    padding-left: 40px;
+    display: flex;
+    gap: 10px;
+    color: white;
+}
+button
+{
+    border-radius: 10px;
+    width: 250px;
+    height: 60px;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+}
+.main-container
+{
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+}
+.about
+{
+    width: 800px;
+    font-size: medium;
 }
