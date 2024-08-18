@@ -15,13 +15,14 @@ export const routes: Routes = [
     component: MovieListComponent,
   },
   {
-    path: 'movies/booktickets',
-    component: BookticketComponent,
-  },
-  {
     path: 'movies/:id',
     component: MovieDetailsComponent,
   },
+  {
+    path: 'movies/booktickets/:id',
+    component: BookticketComponent,
+  },
+
   {
     path: 'movies/booktickets/final',
     component: TransactionComponent,

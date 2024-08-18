@@ -17,6 +17,7 @@ export class MovieDetailsComponent {
   trustedUrl!: SafeUrl;
   isLoading: boolean = true;
   msg = '';
+  id: any;
 
   constructor(
     private movieService: MoviesService,
@@ -26,9 +27,9 @@ export class MovieDetailsComponent {
 
   // After Initialization of the component
   ngOnInit() {
-    let id = this.route.snapshot.paramMap.get('id') as string; // From URL
+    this.id = this.route.snapshot.paramMap.get('id') as string; // From URL
     this.movieService
-      .getMovieByIdP(id)
+      .getMovieByIdP(this.id)
       .then((data) => {
         this.movie = data; // Model
         this.isLoading = false;
