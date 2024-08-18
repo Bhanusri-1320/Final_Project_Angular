@@ -1,18 +1,20 @@
-<div class="input">
-  <form [formGroup]="searchForm" class="form">
-    <mat-form-field class="example-full-width">
-      <input
-        matInput
-        placeholder="search for Movies"
-        formControlName="search"
-      />
-    </mat-form-field>
-  </form>
+<div class="hole">
+  <div class="input">
+    <form [formGroup]="searchForm" class="form">
+      <mat-form-field class="example-full-width">
+        <input
+          matInput
+          placeholder="search for Movies"
+          formControlName="search"
+        />
+      </mat-form-field>
+    </form>
+  </div>
+  <section class="movie-list-container">
+    @if(isLoading){
+    <h1>Loading...</h1>
+    } @for (movie of moviesList; track movie.movieId){
+    <app-movie [movie]="movie" [id]="movie.movieId" />
+    }
+  </section>
 </div>
-<section class="movie-list-container">
-  @if(isLoading){
-  <h1>Loading...</h1>
-  } @for (movie of moviesList; track movie.movieId){
-  <app-movie [movie]="movie" [id]="movie.movieId" />
-  }
-</section>

@@ -1,11 +1,51 @@
-<div>
-  <div class="head">
-    <h1>{{ ticketsData.movieName }}</h1>
-  </div>
-  <div>
-    <h2>select Date:</h2>
-    <h2>select Timings:</h2>
-    <h2>select AvailableTheaters:</h2>
-  </div>
+<div class="hole">
+  <mat-card appearance="outlined" class="card">
+    <mat-card-content>
+      <div>
+        <div class="head">
+          <h1>{{ ticketsData.movieName }}</h1>
+        </div>
+        <h2>Date:</h2>
+        <h4>{{ ticketsData.date }}</h4>
+        <div>
+          <h3>select AvailableTheaters:</h3>
+          @for (ite of ticketsData.availableTheaters; track $index) {
+          <i class="fa-solid fa-film"></i>
+          <h2>Theater:{{ ite.theaterName }}</h2>
+          <div class="timings">
+            <!-- <h3>select Timings:</h3> -->
+            @for (item of ticketsData.timings; track $index) {
+            <div class="button" (click)="selectTiming(item, ite.theaterName)">
+              <mat-card appearance="outlined">
+                <mat-card-content>
+                  <h4>{{ item }}</h4>
+                </mat-card-content>
+              </mat-card>
+            </div>
+            }
+          </div>
+          }
+        </div>
+      </div>
+      <br />
+      @if(selectedData.timing) {
+      <button
+        mat-raised-button
+        style="background-color: #f84464"
+        (click)="navigateTo()"
+      >
+        Book Ticket
+      </button>
+      } @else {
+      <button
+        mat-raised-button
+        disabled
+        style="background-color: #f84464"
+        (click)="navigateTo()"
+      >
+        Book Ticket
+      </button>
+      }
+    </mat-card-content>
+  </mat-card>
 </div>
-<button routerLink="/movies/booktickets/final">Book Ticket</button>

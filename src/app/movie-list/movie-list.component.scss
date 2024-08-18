@@ -4,7 +4,7 @@
     gap: 3.5rem;
     justify-content: space-around;
     margin:25px 28px;
-  
+    overflow-y: auto;
   }
   div{
     display: flex;
@@ -33,7 +33,6 @@
     cursor: pointer;
     color: White;
     width: 10%;
-    height: 80%;
     font-size: 2rem;
     position: absolute;
     border: none;
@@ -45,7 +44,6 @@
     cursor: pointer;
     color: white;
     width: 10%;
-    height: 80%;
     font-size: 2rem;
     position: absolute;
     border: none;
@@ -57,7 +55,19 @@
   }
   img {
     width: 90vw;
-    height: 65vh;
   }
   
+  .hole
+  {
+    min-height: 90vh;
+    overflow-y: auto;
+
+
+
+
+  }
+
+
+
+
   

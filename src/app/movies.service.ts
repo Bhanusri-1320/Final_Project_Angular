@@ -6,6 +6,11 @@ const API = 'https://669a42939ba098ed61fef789.mockapi.io/';
   providedIn: 'root',
 })
 export class MoviesService {
+  selectedDate: any = {
+    theaterName: '',
+    timing: '',
+    date: '',
+  };
   TicketsData: any[] = [
     {
       movieId: '1', // Double iSmart
@@ -106,5 +111,9 @@ export class MoviesService {
     const movie = this.TicketsData.find((res) => res.movieId === id); // Use === for strict equality
     console.log(movie);
     return movie;
+  }
+  getSelectedData() {
+    console.log(this.selectedDate);
+    return this.selectedDate;
   }
 }
