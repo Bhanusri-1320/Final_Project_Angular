@@ -1,25 +1,32 @@
-<!-- <div class="main">
-  <mat-card appearance="outlined" class="card">
+<div class="login-container">
+  <mat-card appearance="outlined">
+    <mat-card-title>Login</mat-card-title>
     <mat-card-content>
-      <form class="example-form">
-        <mat-form-field class="example-full-width">
-          <mat-label>User Name</mat-label>
-          <input matInput placeholder="" value="" />
+      <br />
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+          <mat-label>Username</mat-label>
+          <input matInput type="text" formControlName="username" />
+          @if(username?.touched && username?.hasError('required') ){
+          <mat-error>Name is <strong>required</strong></mat-error>
+          }
         </mat-form-field>
-
         <br />
         <mat-form-field>
           <mat-label>Password</mat-label>
-          <input matInput placeholder="" value="" />
+          <input matInput type="password" formControlName="password" />
+          @if(password?.touched && password?.hasError('required') ){
+          <mat-error>password is <strong>required</strong></mat-error>
+          }
         </mat-form-field>
+        <br />
+        <button mat-raised-button color="primary" type="submit">Login</button>
       </form>
-      <br />
-      <button mat-raised-button>Login</button>
     </mat-card-content>
   </mat-card>
-</div> -->
+</div>
 
-<div class="login-container">
+<!-- <div class="login-container">
   <mat-card appearance="outlined">
     <mat-card-title>Login</mat-card-title>
     <mat-card-content>
@@ -44,4 +51,4 @@
       </form>
     </mat-card-content>
   </mat-card>
-</div>
+</div> -->

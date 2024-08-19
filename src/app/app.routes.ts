@@ -6,6 +6,7 @@ import { BookticketComponent } from './bookticket/bookticket.component';
 import { TransactionComponent } from './transaction/transaction.component';
 import { HomeComponent } from './home/home.component';
 import { HistoryComponent } from './history/history.component';
+import { SignupComponent } from './signup/signup.component';
 
 export const routes: Routes = [
   {
@@ -15,6 +16,10 @@ export const routes: Routes = [
   {
     path: 'login',
     component: HomeComponent,
+  },
+  {
+    path: 'signup',
+    component: SignupComponent,
   },
   {
     path: 'movies',

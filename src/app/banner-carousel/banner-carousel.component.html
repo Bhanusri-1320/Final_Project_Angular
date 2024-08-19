@@ -1,0 +1,22 @@
+<div class="carousel-container">
+  <div>
+    <button class="prev-button" (click)="prevSlide()">&#10094;</button>
+  </div>
+  <div class="carousel-slides">
+    <div
+      class="carousel-slide"
+      *ngFor="let banner of banners; let i = index"
+      [ngClass]="{ active: i === currentIndex }"
+    >
+      <img [src]="banner" alt="Banner Image" />
+    </div>
+    <!-- <div>
+      @for (item of banners; track $index) {
+      <img [src]="item" alt="" />
+      }
+    </div> -->
+  </div>
+  <div>
+    <button class="next-button" (click)="nextSlide()">&#10095;</button>
+  </div>
+</div>

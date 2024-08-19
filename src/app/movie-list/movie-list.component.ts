@@ -13,6 +13,7 @@ import {
 import { MatCardModule } from '@angular/material/card';
 import { debounceTime, switchMap } from 'rxjs';
 import { MatInputModule } from '@angular/material/input';
+import { BannerCarouselComponent } from '../banner-carousel/banner-carousel.component';
 
 @Component({
   selector: 'app-movie-list',
@@ -26,6 +27,7 @@ import { MatInputModule } from '@angular/material/input';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
+    BannerCarouselComponent,
   ],
   templateUrl: './movie-list.component.html',
   styleUrl: './movie-list.component.scss',

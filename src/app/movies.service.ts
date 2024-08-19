@@ -94,7 +94,13 @@ export class MoviesService {
       timings: ['10:30 AM', '1:30 PM', '4:30 PM'],
     },
   ];
-
+  banners: any = [
+    'https://in.bmscdn.com/webin/best-of-2018/best-of-2018-banner.jpg',
+    'https://inc42.com/cdn-cgi/image/quality=75/https://asset.inc42.com/2017/10/bookmyshow-flipkart-ecommerce-online-ticketing.jpg',
+    'https://assets-in.bmscdn.com/iedb/movies/images/mobile/listing/medium/kalki-2898-ad-et00352941-1718275859.jpg',
+    'https://bsmedia.business-standard.com/_media/bs/img/article/2017-04/28/full/1493364600-4637.jpg?im=FeatureCrop,size=(826,465)',
+    'https://akm-img-a-in.tosshub.com/businesstoday/images/story/202309/ezgif-sixteen_nine_42.jpg?size=948:533',
+  ];
   constructor(private http: HttpClient) {}
   getAllMoviesP(): Promise<any> {
     return fetch(`${API}/MoviesList`).then((res) => res.json());
