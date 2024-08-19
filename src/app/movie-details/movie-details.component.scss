@@ -2,19 +2,19 @@
 .movie
 {
     place-content: center;
-    background:  linear-gradient(to right, black 20%, transparent 50%),
-    url('https://assets-in.bmscdn.com/iedb/movies/images/mobile/listing/medium/double-ismart-et00398323-1715779331.jpg');    // background-image: url(https://imagesv2.desimartini.com/images/202406/double-ismart-1718453772.jpeg?width=800&quality=50&format=webp);
-    height: 500px;
-    background-repeat: no-repeat;
-    width: 100%;
-    background-size: cover; /* Ensures the image covers the entire viewport */
-    background-position:right left;
-    background-repeat: no-repeat; /* Prevents tiling */
-    object-fit: cover;
-    width: 120vw; /* Sets width to viewport width */
-    height: 65vh; /* Sets height to viewport height */
-    padding-top: 100px;
-    color: white;
+    // background:  linear-gradient(to right, black 20%, transparent 50%),
+    // url('https://assets-in.bmscdn.com/iedb/movies/images/mobile/listing/medium/double-ismart-et00398323-1715779331.jpg');    // background-image: url(https://imagesv2.desimartini.com/images/202406/double-ismart-1718453772.jpeg?width=800&quality=50&format=webp);
+    // height: 500px;
+    // background-repeat: no-repeat;
+    // width: 100%;
+    // background-size: cover; /* Ensures the image covers the entire viewport */
+    // background-position:right left;
+    // background-repeat: no-repeat; /* Prevents tiling */
+    // object-fit: cover;
+    // width: 120vw; /* Sets width to viewport width */
+    // height: 65vh; /* Sets height to viewport height */
+    // padding-top: 100px;
+    // color: white;
 }
 // .poster{
 //     padding-top: 20px;

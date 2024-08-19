@@ -9,6 +9,10 @@ import { HomeComponent } from './home/home.component';
 export const routes: Routes = [
   {
     path: '',
+    component: BasicComponent,
+  },
+  {
+    path: 'login',
     component: HomeComponent,
   },
   {
