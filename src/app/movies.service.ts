@@ -11,6 +11,7 @@ export class MoviesService {
     timing: '',
     date: '',
   };
+  history: any = [];
   TicketsData: any[] = [
     {
       movieId: '1', // Double iSmart
@@ -114,6 +115,8 @@ export class MoviesService {
   }
   getSelectedData() {
     console.log(this.selectedDate);
+    this.history.push(this.selectedDate);
+    console.log(this.history);
     return this.selectedDate;
   }
 }

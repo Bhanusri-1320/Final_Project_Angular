@@ -5,6 +5,7 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { BookticketComponent } from './bookticket/bookticket.component';
 import { TransactionComponent } from './transaction/transaction.component';
 import { HomeComponent } from './home/home.component';
+import { HistoryComponent } from './history/history.component';
 
 export const routes: Routes = [
   {
@@ -18,6 +19,10 @@ export const routes: Routes = [
   {
     path: 'movies',
     component: MovieListComponent,
+  },
+  {
+    path: 'history',
+    component: HistoryComponent,
   },
   {
     path: 'movies/:id',
