@@ -19,11 +19,11 @@ export const routes: Routes = [
     component: MovieListComponent,
   },
   {
-    path: 'user/login',
+    path: 'login',
     component: HomeComponent,
   },
   {
-    path: 'user/signup',
+    path: 'signup',
     component: SignupComponent,
   },
 

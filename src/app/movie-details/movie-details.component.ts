@@ -32,6 +32,7 @@ export class MovieDetailsComponent {
   // After Initialization of the component
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id') as string; // From URL
+    console.log(this.id);
     this.movieService
       .getMovieByIdP(this.id)
       .then((data) => {
