@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatIconModule } from '@angular/material/icon';
@@ -56,4 +56,13 @@ export class MovieComponent {
   //   ratings: '7/10',
   //   trailer: 'https://youtube.com/trailer1',
   // };
+  @Output() deleteMovieEvent = new EventEmitter<any>();
+  @Output() editMovieEvent = new EventEmitter<any>();
+
+  deleteMovie() {
+    this.deleteMovieEvent.emit(this.movie);
+  }
+  editMovie() {
+    this.editMovieEvent.emit(this.movie);
+  }
 }

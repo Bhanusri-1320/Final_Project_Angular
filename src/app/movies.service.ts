@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-const API = 'https://669a42939ba098ed61fef789.mockapi.io/';
+const API = 'https://final-prj-node.onrender.com';
+// const API = 'http://localhost:4000';
 @Injectable({
   providedIn: 'root',
 })
@@ -103,7 +104,8 @@ export class MoviesService {
   ];
   constructor(private http: HttpClient) {}
   getAllMoviesP(): Promise<any> {
-    return fetch(`${API}/MoviesList`).then((res) => res.json());
+    console.log('getting..');
+    return fetch(`${API}/movies`).then((res) => res.json());
   }
   searchUser(searchTerm: string) {
     return this.http.get(
@@ -111,7 +113,7 @@ export class MoviesService {
     );
   }
   getMovieByIdP(id: string) {
-    return fetch(`${API}/MoviesList/${id}`).then((res) => res.json());
+    return fetch(`${API}/movies/${id}`).then((res) => res.json());
   }
   getTicketsDataById(id: any) {
     console.log(id);
@@ -127,7 +129,8 @@ export class MoviesService {
   }
   addMovieP(newMovie: any) {
     // this.movies.push(newMovie);
-    return fetch(`${API}/Movies`, {
+    console.log(newMovie);
+    return fetch(`${API}/movies`, {
       method: 'POST',
       body: JSON.stringify(newMovie),
       headers: {

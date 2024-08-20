@@ -51,6 +51,7 @@ export class MovieListComponent {
   // After Initialization of the component
   ngOnInit() {
     this.loadMovies();
+    console.log(this.moviesList);
     this.searchForm
       .get('search')
       ?.valueChanges.pipe(
@@ -75,5 +76,11 @@ export class MovieListComponent {
         this.isLoading = false;
         this.msg = 'Something went wrong 🥲';
       });
+  }
+  deleteMovie($event: any) {
+    throw new Error('Method not implemented.');
+  }
+  editMovie($event: any) {
+    throw new Error('Method not implemented.');
   }
 }

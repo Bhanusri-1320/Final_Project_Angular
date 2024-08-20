@@ -5,7 +5,7 @@
     <input
       matInput
       placeholder="Phani the rockstar ⭐"
-      formControlName="name"
+      formControlName="title"
     />
 
     @if(name?.touched && name?.hasError('required') ){
@@ -22,7 +22,7 @@
 
   <mat-form-field>
     <mat-label>Rating</mat-label>
-    <input type="number" matInput placeholder="8" formControlName="rating" />
+    <input type="number" matInput placeholder="8" formControlName="ratings" />
 
     @if(rating?.touched && rating?.hasError('required') ){
     <mat-error>Rating is <strong>required</strong></mat-error>
@@ -44,7 +44,7 @@
 
   <mat-form-field>
     <mat-label>background</mat-label>
-    <input matInput placeholder="http://" formControlName="trailer" />
+    <input matInput placeholder="http://" formControlName="background" />
   </mat-form-field>
 
   <mat-form-field>
@@ -61,7 +61,7 @@
   </mat-form-field>
   <mat-form-field>
     <mat-label>release Date</mat-label>
-    <input matInput placeholder="2024-05-08" formControlName="relaseDate" />
+    <input matInput placeholder="2024-05-08" formControlName="releaseDate" />
   </mat-form-field>
   <mat-form-field>
     <mat-label>cast</mat-label>

@@ -12,6 +12,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MoviesService } from '../movies.service';
 import { Router } from '@angular/router';
+import { title } from 'process';
 
 @Component({
   selector: 'app-add-movie',
@@ -37,9 +38,9 @@ export class AddMovieComponent {
   ) {
     // formGroup -> formControlName
     this.movieForm = this.fb.group({
-      name: ['', [Validators.required, Validators.minLength(2)]],
+      title: ['', [Validators.required, Validators.minLength(2)]],
       poster: '',
-      rating: [
+      ratings: [
         '',
         [Validators.required, Validators.min(1), Validators.max(10)],
       ],
@@ -48,13 +49,15 @@ export class AddMovieComponent {
       language: '',
       duration: '',
       genre: '',
-      relaseDate: '',
-      cast: '',
+      releaseDate: '',
+      cast: [],
       director: '',
+      trailer: '',
     });
   }
 
   addMovie() {
+    console.log(this.movieForm.value);
     console.log(this.movieForm.value);
     // Todo: Fix Add - Technical Debt
     if (this.movieForm.value) {

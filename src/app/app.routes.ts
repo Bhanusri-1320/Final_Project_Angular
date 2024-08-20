@@ -15,17 +15,18 @@ export const routes: Routes = [
     component: BasicComponent,
   },
   {
-    path: 'login',
-    component: HomeComponent,
-  },
-  {
-    path: 'signup',
-    component: SignupComponent,
-  },
-  {
     path: 'movies',
     component: MovieListComponent,
   },
+  {
+    path: 'user/login',
+    component: HomeComponent,
+  },
+  {
+    path: 'user/signup',
+    component: SignupComponent,
+  },
+
   {
     path: 'addmovie',
     component: AddMovieComponent,

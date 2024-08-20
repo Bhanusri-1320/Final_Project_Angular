@@ -1,21 +1,22 @@
 .movie-list-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 3.5rem;
-    justify-content: space-around;
-    margin:25px 28px;
+    gap: 12rem;
+    justify-content: space-evenly;
+    // margin:25px 28px;
     overflow-y: auto;
   }
-  div{
-    display: flex;
-    flex-wrap: wrap;
-    gap:30px;
-    justify-content: space-evenly;
-    padding-top: 10px;
-}
+//   div{
+//     display: flex;
+//     flex-wrap: wrap;
+//     gap:30px;
+//     justify-content: space-evenly;
+//     padding-top: 10px;
+// }
 .input
 {
     place-content: center;
+    text-align: center;
 }
 .example-form {
     min-width: 500px;
@@ -24,7 +25,7 @@
   }
   
   .example-full-width {
-    width: 100%;
+    width: 500px;
   }
 
   .button1 {
