@@ -63,6 +63,7 @@ export class MovieComponent {
     this.deleteMovieEvent.emit(this.movie);
   }
   editMovie() {
+    console.log('edit');
     this.editMovieEvent.emit(this.movie);
   }
 }

@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-const API = 'https://final-prj-node.onrender.com';
-// const API = 'http://localhost:4000';
+// const API = 'https://final-prj-node.onrender.com';
+const API = 'http://localhost:4000';
+// const API = 'https://669a42939ba098ed61fef789.mockapi.io';
 @Injectable({
   providedIn: 'root',
 })
@@ -135,6 +136,29 @@ export class MoviesService {
       body: JSON.stringify(newMovie),
       headers: {
         'Content-Type': 'application/json',
+      },
+    }).then((res) => res.json());
+  }
+  deleteMovie(movie: any) {
+    return fetch(`${API}/movies/${movie.movieId}`, {
+      method: 'Delete',
+      headers: { 'x-auth-token': localStorage.getItem('token') as string },
+    }).then((res) => res.json());
+  }
+  editMovie(updatedMovie: any) {
+    // this.movieList.push(newMovie);
+
+    // Put
+    // 1. method
+    // 2. body - Data & JSON
+    // 3. Header - JSON
+    console.log(updatedMovie);
+
+    return fetch(`${API}/movies/${updatedMovie.movieId}`, {
+      method: 'PUT',
+      body: JSON.stringify(updatedMovie),
+      headers: {
+        'Content-type': 'application/json',
       },
     }).then((res) => res.json());
   }

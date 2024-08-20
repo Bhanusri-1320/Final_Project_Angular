@@ -11,6 +11,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { Router, RouterLink } from '@angular/router';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-signup',
@@ -29,24 +30,29 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class SignupComponent {
   signupForm!: FormGroup;
-  users: { username: string; password: string }[] = []; // Array to store users
-  constructor(private fb: FormBuilder, private route: Router) {
+  users: { userName: string; password: string }[] = []; // Array to store users
+  constructor(
+    private fb: FormBuilder,
+    private route: Router,
+    private loginService: LoginService
+  ) {
     this.signupForm = this.fb.group({
-      username: ['', Validators.required],
+      userName: ['', Validators.required],
       password: ['', Validators.required],
     });
   }
   onSubmit() {
     if (this.signupForm.valid) {
-      const { username, password } = this.signupForm.value;
-      this.users.push({ username, password }); // Store the user credentials
+      const { userName, password } = this.signupForm.value;
+      // this.users.push({ userName, password }); // Store the user credentials
       console.log('Stored Users:', this.users);
+      this.loginService.createUser(this.signupForm.value);
       // Handle login logic here (e.g., authentication)
       this.route.navigate(['/movies']);
     }
   }
-  get username() {
-    return this.signupForm.get('username');
+  get userName() {
+    return this.signupForm.get('userName');
   }
   get password() {
     return this.signupForm.get('password');

@@ -19,7 +19,12 @@
     @if(isLoading){
     <h1>Loading...</h1>
     } @for (movie of moviesList; track movie.movieId){
-    <app-movie [movie]="movie" [id]="movie.movieId" />
+    <app-movie
+      [movie]="movie"
+      [id]="movie.movieId"
+      (deleteMovieEvent)="deleteMovie($event)"
+      (editMovieEvent)="editMovie($event)"
+    />
     }
   </section>
 </div>

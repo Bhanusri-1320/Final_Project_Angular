@@ -77,10 +77,11 @@ export class MovieListComponent {
         this.msg = 'Something went wrong 🥲';
       });
   }
-  deleteMovie($event: any) {
-    throw new Error('Method not implemented.');
+  deleteMovie(movie: any) {
+    this.moviesService.deleteMovie(movie).then(() => this.loadMovies());
   }
-  editMovie($event: any) {
-    throw new Error('Method not implemented.');
+  editMovie(movie: any) {
+    console;
+    this.router.navigate(['movies', 'edit', movie.movieId]);
   }
 }

@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-home',
@@ -24,26 +25,33 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class HomeComponent {
   loginForm: FormGroup;
-  users: { username: string; password: string }[] = []; // Array to store users
+  users: { userName: string; password: string }[] = []; // Array to store users
 
-  constructor(private fb: FormBuilder, private route: Router) {
+  constructor(
+    private loginService: LoginService,
+    private fb: FormBuilder,
+    private route: Router
+  ) {
     this.loginForm = this.fb.group({
-      username: ['', Validators.required],
+      userName: ['', Validators.required],
       password: ['', Validators.required],
     });
   }
 
   onSubmit() {
     if (this.loginForm.valid) {
-      const { username, password } = this.loginForm.value;
-      this.users.push({ username, password }); // Store the user credentials
+      const { userName, password } = this.loginForm.value;
+      this.users.push({ userName, password }); // Store the user credentials
       console.log('Stored Users:', this.users);
+      this.loginService
+        .loginUser(this.loginForm.value)
+        .then((data) => localStorage.setItem('token', data.token));
       // Handle login logic here (e.g., authentication)
       this.route.navigate(['/movies']);
     }
   }
-  get username() {
-    return this.loginForm.get('username');
+  get userName() {
+    return this.loginForm.get('userName');
   }
   get password() {
     return this.loginForm.get('password');

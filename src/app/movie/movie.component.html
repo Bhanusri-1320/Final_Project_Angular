@@ -1,4 +1,4 @@
-<div routerLink="/movies/{{ id }}" class="main">
+<div class="main">
   <mat-card class="movie-container">
     <img
       src="{{ movie.poster }}"
@@ -18,14 +18,14 @@
               show ? "keyboard_arrow_up" : "keyboard_arrow_down"
             }}</mat-icon>
           </button> -->
-
-          <!-- <button
+          <button
             mat-icon-button
             aria-label="Details of movie"
             routerLink="/movies/{{ id }}"
           >
             <mat-icon>info</mat-icon>
-          </button> -->
+          </button>
+          -
         </h2>
         <p class="movie-rating">
           <i class="fa-solid fa-star" style="color: #f84464">⭐</i>
