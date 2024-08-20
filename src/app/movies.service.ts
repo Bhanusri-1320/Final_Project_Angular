@@ -125,4 +125,14 @@ export class MoviesService {
     console.log(this.history);
     return this.selectedDate;
   }
+  addMovieP(newMovie: any) {
+    // this.movies.push(newMovie);
+    return fetch(`${API}/Movies`, {
+      method: 'POST',
+      body: JSON.stringify(newMovie),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }).then((res) => res.json());
+  }
 }

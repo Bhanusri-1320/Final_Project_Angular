@@ -7,6 +7,7 @@ import { TransactionComponent } from './transaction/transaction.component';
 import { HomeComponent } from './home/home.component';
 import { HistoryComponent } from './history/history.component';
 import { SignupComponent } from './signup/signup.component';
+import { AddMovieComponent } from './add-movie/add-movie.component';
 
 export const routes: Routes = [
   {
@@ -24,6 +25,10 @@ export const routes: Routes = [
   {
     path: 'movies',
     component: MovieListComponent,
+  },
+  {
+    path: 'addmovie',
+    component: AddMovieComponent,
   },
   {
     path: 'history',
