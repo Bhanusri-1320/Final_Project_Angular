@@ -25,14 +25,13 @@
           >
             <mat-icon>info</mat-icon>
           </button>
-          -
         </h2>
         <p class="movie-rating">
-          <i class="fa-solid fa-star" style="color: #f84464">⭐</i>
-          {{ movie.ratings }}
+          <!-- <i class="fa-solid fa-star" style="color: #f84464">⭐</i> -->
+          ⭐{{ movie.ratings }}
         </p>
       </div>
-      <!--   
+      <!--
       @if(show){
       <p class="movie-summary">{{ movie.summary }}</p>
       }
@@ -58,8 +57,24 @@
           </button>
         </div> -->
       </div>
-      <button mat-raised-button (click)="deleteMovie()">delete</button>
-      <button mat-raised-button (click)="editMovie()">✏️</button>
+      <div style="display: flex; justify-content: space-between">
+        <button
+          mat-icon-button
+          aria-label="Delete movie"
+          color="primary"
+          (click)="editMovie()"
+        >
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          aria-label="Delete movie"
+          color="warn"
+          (click)="deleteMovie()"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
     </mat-card-content>
   </mat-card>
 </div>

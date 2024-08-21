@@ -9,6 +9,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { routes } from '../app.routes';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { SnackBarComponent } from '../snack-bar/snack-bar.component';
 
 @Component({
   selector: 'app-bookticket',
@@ -32,7 +34,11 @@ export class BookticketComponent {
     timing: '',
     date: '',
   };
-  constructor(private moviesService: MoviesService, private router: Router) {}
+  constructor(
+    private moviesService: MoviesService,
+    private router: Router,
+    private snackBar: MatSnackBar
+  ) {}
   ngOnInit() {
     this.ticketsData = this.moviesService.getTicketsDataById('1');
     console.log(this.ticketsData);
@@ -47,6 +53,13 @@ export class BookticketComponent {
     console.log(this.selectedData);
   }
   navigateTo() {
+    this.snackBar.openFromComponent(SnackBarComponent, {
+      duration: 3000, // Duration in milliseconds
+      verticalPosition: 'bottom', // Position on the screen
+      horizontalPosition: 'center', // Position on the screen
+      panelClass: ['snack-bar-success'],
+    });
+
     this.router.navigate([
       `/movies/booktickets/final/${this.ticketsData.movieId}`,
     ]);

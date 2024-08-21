@@ -9,19 +9,21 @@ import { HistoryComponent } from './history/history.component';
 import { SignupComponent } from './signup/signup.component';
 import { AddMovieComponent } from './add-movie/add-movie.component';
 import { EditComponent } from './edit/edit.component';
+import { authGuard } from './auth.guard';
 
 export const routes: Routes = [
   {
     path: '',
     component: BasicComponent,
   },
-  {
-    path: 'movies',
-    component: MovieListComponent,
-  },
+
   {
     path: 'login',
     component: HomeComponent,
+  },
+  {
+    path: 'movies',
+    component: MovieListComponent,
   },
   {
     path: 'signup',
@@ -31,6 +33,7 @@ export const routes: Routes = [
   {
     path: 'addmovie',
     component: AddMovieComponent,
+    canActivate: [authGuard],
   },
   {
     path: 'movies/edit/:id',
