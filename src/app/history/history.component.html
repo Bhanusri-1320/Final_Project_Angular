@@ -1,9 +1,15 @@
-<div>
-  @for (item of history; track $index) {
-  <div>
-    <h1>{{ item.theaterName }}</h1>
-    <h2>{{ item.timing }}</h2>
-    <h4>{{ item.date }}</h4>
-  </div>
-  }
+<div class="main">
+  <mat-card class="card">
+    <mat-card-content>
+      <div class="content">
+        @for (item of history; track $index) {
+        <div>
+          <h1><span>TheaterName: </span>{{ item.theaterName }}</h1>
+          <h2><span>Timings: </span>{{ item.timing }}</h2>
+          <h4><span>Date: </span>{{ item.date }}</h4>
+        </div>
+        }
+      </div>
+    </mat-card-content>
+  </mat-card>
 </div>
