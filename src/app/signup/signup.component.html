@@ -1,6 +1,6 @@
 <div class="signup">
   <mat-card appearance="outlined">
-    <mat-card-title>Signup</mat-card-title>
+    <mat-card-title style="color: #3f51b5">Signup</mat-card-title>
     <mat-card-content>
       <br />
       <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
@@ -14,6 +14,14 @@
         <br />
         <mat-form-field>
           <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password" />
+          @if(password?.touched && password?.hasError('required') ){
+          <mat-error>password is <strong>required</strong></mat-error>
+          }
+        </mat-form-field>
+        <br />
+        <mat-form-field>
+          <mat-label>conform Password</mat-label>
           <input matInput type="password" formControlName="password" />
           @if(password?.touched && password?.hasError('required') ){
           <mat-error>password is <strong>required</strong></mat-error>

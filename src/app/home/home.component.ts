@@ -44,7 +44,7 @@ export class HomeComponent {
       this.users.push({ userName, password }); // Store the user credentials
       console.log('Stored Users:', this.users);
       this.loginService
-        .loginUser({ ...this.loginForm.value, roleId: '0' })
+        .loginUser(this.loginForm.value)
         .then((data) => localStorage.setItem('token', data.token));
       // Handle login logic here (e.g., authentication)
       this.route.navigate(['/movies']);

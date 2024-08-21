@@ -16,7 +16,7 @@ export class SnackBarComponent {
     private router: Router
   ) {}
 
-  viewCart() {
+  viewDetails() {
     this.snackBarRef.dismiss(); // Close the snack bar
     this.router.navigate(['/cart']); // Navigate to the cart page
   }

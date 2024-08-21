@@ -1,9 +1,17 @@
 .card
 {
+    padding-left: 10px;
     width: 500px;
 }
 .main
 {
-    padding-left: 100px;
+    padding-top: 80px;
+    padding-left: 700px;
     place-content: center;
 }
+.centered-text {
+    padding-top: 50px;
+    text-align: center;
+    margin: 0; /* Optional: remove default margin */
+  }
+  

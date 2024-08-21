@@ -109,9 +109,8 @@ export class MoviesService {
     return fetch(`${API}/movies`).then((res) => res.json());
   }
   searchUser(searchTerm: string) {
-    return this.http.get(
-      `https://669a42939ba098ed61fef789.mockapi.io/MoviesList?search=${searchTerm}`
-    );
+    console.log(searchTerm);
+    return this.http.get(`${API}/movies?search=${searchTerm}`);
   }
   getMovieByIdP(id: string) {
     return fetch(`${API}/movies/${id}`).then((res) => res.json());

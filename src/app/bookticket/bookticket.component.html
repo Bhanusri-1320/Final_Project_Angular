@@ -18,7 +18,15 @@
             <div class="button" (click)="selectTiming(item, ite.theaterName)">
               <mat-card appearance="outlined">
                 <mat-card-content>
-                  <h4>{{ item }}</h4>
+                  <h4 class="time">{{ item }}</h4>
+                  @if(item?.click) {
+                  <style>
+                    .time {
+                      border: 5px #f84464;
+                      /* background: #f84464; */
+                    }
+                  </style>
+                  }
                 </mat-card-content>
               </mat-card>
             </div>

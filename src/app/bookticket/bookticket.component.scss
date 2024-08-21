@@ -23,4 +23,25 @@ padding-left: 500px;}
     border-radius: 10px;
     color: rgb(68, 212, 68);
 }
-
+/* styles.css or ticket-booking.component.css */
+.button {
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  .button.selected {
+    background-color: #f84464; /* Highlight color */
+    color: white;
+  }
+  
+  .button .mat-card {
+    border: 1px solid #f84464; /* Border color for highlighted */
+  }
+  
+  .mat-card-content {
+    padding: 10px;
+  }
+  .head
+  {
+    font-weight: bolder;
+  }

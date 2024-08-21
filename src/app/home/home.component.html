@@ -1,6 +1,6 @@
 <div class="login-container">
   <mat-card appearance="outlined">
-    <mat-card-title>Login</mat-card-title>
+    <mat-card-title style="color: #3f51b5">Login</mat-card-title>
     <mat-card-content>
       <br />
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
@@ -22,6 +22,8 @@
         <br />
         <button mat-raised-button color="primary" type="submit">Login</button>
       </form>
+      <br />
+      <p>Don't have an account? <a href="/signup">Signup</a></p>
     </mat-card-content>
   </mat-card>
 </div>

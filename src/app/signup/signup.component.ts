@@ -47,10 +47,7 @@ export class SignupComponent {
       const { userName, password } = this.signupForm.value;
       // this.users.push({ userName, password }); // Store the user credentials
       console.log('Stored Users:', this.users);
-      const data = { ...this.signupForm.value, roleId: '0' };
-      console.log({ ...this.signupForm.value, roleId: '0' });
-      console.log(data);
-      this.loginService.createUser(data);
+      this.loginService.createUser(this.signupForm.value);
 
       // Handle login logic here (e.g., authentication)
       this.route.navigate(['/movies']);

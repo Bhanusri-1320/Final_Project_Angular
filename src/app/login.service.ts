@@ -11,7 +11,7 @@ export class LoginService {
       method: 'POST',
       body: JSON.stringify(credentials),
       headers: {
-        'Content-type': 'application/json',
+        roleId: localStorage.getItem('roleId') as string,
       },
     }).then((res) => res.json());
   }

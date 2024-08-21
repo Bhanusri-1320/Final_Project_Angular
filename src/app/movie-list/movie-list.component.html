@@ -12,12 +12,12 @@
     <app-banner-carousel />
   </div>
   <div style="padding-top: 30px">
-    <!-- <h1 style="font-weight: bold">Recommended Movies</h1> -->
+    <!-- <h1 style="font-weight: bold">Recommended Movies< /h1> -->
   </div>
   <br />
   <section class="movie-list-container">
     @if(isLoading){
-    <h1>Loading...</h1>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
     } @for (movie of moviesList; track movie.movieId){
     <app-movie
       [movie]="movie"

@@ -4,6 +4,9 @@ import { Router, RouterLink } from '@angular/router';
 import { MovieComponent } from '../movie/movie.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+
 import {
   FormBuilder,
   FormGroup,
@@ -28,6 +31,8 @@ import { BannerCarouselComponent } from '../banner-carousel/banner-carousel.comp
     MatFormFieldModule,
     MatInputModule,
     BannerCarouselComponent,
+    MatProgressSpinnerModule,
+    MatProgressBarModule,
   ],
   templateUrl: './movie-list.component.html',
   styleUrl: './movie-list.component.scss',
