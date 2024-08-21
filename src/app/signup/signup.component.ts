@@ -29,6 +29,7 @@ import { LoginService } from '../login.service';
   styleUrl: './signup.component.scss',
 })
 export class SignupComponent {
+  roleId: any;
   signupForm!: FormGroup;
   users: { userName: string; password: string }[] = []; // Array to store users
   constructor(
@@ -46,7 +47,11 @@ export class SignupComponent {
       const { userName, password } = this.signupForm.value;
       // this.users.push({ userName, password }); // Store the user credentials
       console.log('Stored Users:', this.users);
-      this.loginService.createUser(this.signupForm.value);
+      const data = { ...this.signupForm.value, roleId: '0' };
+      console.log({ ...this.signupForm.value, roleId: '0' });
+      console.log(data);
+      this.loginService.createUser(data);
+
       // Handle login logic here (e.g., authentication)
       this.route.navigate(['/movies']);
     }

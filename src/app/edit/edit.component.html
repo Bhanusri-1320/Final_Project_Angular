@@ -1,12 +1,8 @@
 <!-- Todo -->
-<form [formGroup]="movieForm" (ngSubmit)="addMovie()" class="add-movie-form">
+<form [formGroup]="movieForm" (ngSubmit)="editMovie()" class="add-movie-form">
   <mat-form-field>
     <mat-label>Name</mat-label>
-    <input
-      matInput
-      placeholder="Phani the rockstar ⭐"
-      formControlName="title"
-    />
+    <input matInput placeholder="the rockstar ⭐" formControlName="title" />
 
     @if(name?.touched && name?.hasError('required') ){
     <mat-error>Name is <strong>required</strong></mat-error>
@@ -22,15 +18,15 @@
 
   <mat-form-field>
     <mat-label>Rating</mat-label>
-    <input type="string" matInput placeholder="8" formControlName="ratings" />
+    <input type="number" matInput placeholder="8" formControlName="ratings" />
 
-    <!-- @if(rating?.touched && rating?.hasError('required') ){
+    @if(rating?.touched && rating?.hasError('required') ){
     <mat-error>Rating is <strong>required</strong></mat-error>
     } @if(rating?.touched && rating?.hasError('min') ){
     <mat-error>Rating is <strong>too low 🥲</strong></mat-error>
     } @if(rating?.touched && rating?.hasError('max') ){
     <mat-error>Rating is too high 😓</mat-error>
-    } -->
+    }
   </mat-form-field>
 
   <mat-form-field>
@@ -64,9 +60,9 @@
     <input matInput placeholder="2024-05-08" formControlName="releaseDate" />
   </mat-form-field>
   <!-- <mat-form-field>
-    <mat-label>cast</mat-label>
-    <input matInput placeholder="" formControlName="cast" />
-  </mat-form-field> -->
+      <mat-label>cast</mat-label>
+      <input matInput placeholder="" formControlName="cast" />
+    </mat-form-field> -->
   <mat-form-field>
     <mat-label>director</mat-label>
     <input matInput placeholder="director name" formControlName="director" />

@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { HistoryComponent } from './history/history.component';
 import { SignupComponent } from './signup/signup.component';
 import { AddMovieComponent } from './add-movie/add-movie.component';
+import { EditComponent } from './edit/edit.component';
 
 export const routes: Routes = [
   {
@@ -30,6 +31,10 @@ export const routes: Routes = [
   {
     path: 'addmovie',
     component: AddMovieComponent,
+  },
+  {
+    path: 'movies/edit/:id',
+    component: EditComponent,
   },
   {
     path: 'history',

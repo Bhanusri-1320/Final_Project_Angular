@@ -50,6 +50,7 @@ export class MovieListComponent {
 
   // After Initialization of the component
   ngOnInit() {
+    localStorage.setItem('token', '');
     this.loadMovies();
     console.log(this.moviesList);
     this.searchForm
@@ -81,7 +82,7 @@ export class MovieListComponent {
     this.moviesService.deleteMovie(movie).then(() => this.loadMovies());
   }
   editMovie(movie: any) {
-    console;
-    this.router.navigate(['movies', 'edit', movie.movieId]);
+    console.log(movie);
+    this.router.navigate([`movies/edit/${movie.movieId}`]);
   }
 }
