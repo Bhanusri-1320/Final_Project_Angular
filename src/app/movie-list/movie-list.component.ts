@@ -55,7 +55,7 @@ export class MovieListComponent {
 
   // After Initialization of the component
   ngOnInit() {
-    localStorage.setItem('token', '');
+    // localStorage.setItem('token', '');
     this.loadMovies();
     console.log(this.moviesList);
     this.searchForm

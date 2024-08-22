@@ -145,19 +145,13 @@ export class MoviesService {
     }).then((res) => res.json());
   }
   editMovie(id: any, updatedMovie: any) {
-    // this.movieList.push(newMovie);
-
-    // Put
-    // 1. method
-    // 2. body - Data & JSON
-    // 3. Header - JSON
-    console.log(updatedMovie);
-
+    console.log('❤️', updatedMovie);
     return fetch(`${API}/movies/${id}`, {
       method: 'PUT',
       body: JSON.stringify(updatedMovie),
       headers: {
         'Content-type': 'application/json',
+        'x-auth-token': localStorage.getItem('token') as string,
       },
     }).then((res) => res.json());
   }

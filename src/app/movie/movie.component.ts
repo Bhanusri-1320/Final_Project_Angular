@@ -58,7 +58,8 @@ export class MovieComponent {
   // };
   @Output() deleteMovieEvent = new EventEmitter<any>();
   @Output() editMovieEvent = new EventEmitter<any>();
-  roleId = localStorage.getItem('roleId');
+  roleId: any;
+  // roleId = localStorage.getItem('roleId');
   deleteMovie() {
     this.deleteMovieEvent.emit(this.movie);
   }

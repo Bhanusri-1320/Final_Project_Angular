@@ -2,7 +2,12 @@
 <form [formGroup]="movieForm" (ngSubmit)="editMovie()" class="add-movie-form">
   <mat-form-field>
     <mat-label>Name</mat-label>
-    <input matInput placeholder="the rockstar ⭐" formControlName="title" />
+    <input
+      matInput
+      type="string"
+      placeholder="the rockstar ⭐"
+      formControlName="title"
+    />
 
     @if(name?.touched && name?.hasError('required') ){
     <mat-error>Name is <strong>required</strong></mat-error>
@@ -13,12 +18,17 @@
 
   <mat-form-field>
     <mat-label>Poster</mat-label>
-    <input matInput placeholder="http://" formControlName="poster" />
+    <input
+      matInput
+      type="string"
+      placeholder="http://"
+      formControlName="poster"
+    />
   </mat-form-field>
 
   <mat-form-field>
     <mat-label>Rating</mat-label>
-    <input type="number" matInput placeholder="8" formControlName="ratings" />
+    <input type="string" matInput placeholder="8" formControlName="ratings" />
 
     @if(rating?.touched && rating?.hasError('required') ){
     <mat-error>Rating is <strong>required</strong></mat-error>
@@ -33,6 +43,7 @@
     <mat-label>Summary</mat-label>
     <input
       matInput
+      type="string"
       placeholder="Your awesome summary 🎊"
       formControlName="synopsis"
     />
@@ -40,12 +51,22 @@
 
   <mat-form-field>
     <mat-label>background</mat-label>
-    <input matInput placeholder="http://" formControlName="background" />
+    <input
+      matInput
+      type="string"
+      placeholder="http://"
+      formControlName="background"
+    />
   </mat-form-field>
 
   <mat-form-field>
     <mat-label>Language</mat-label>
-    <input matInput placeholder="Telugu" formControlName="language" />
+    <input
+      matInput
+      type="string"
+      placeholder="Telugu"
+      formControlName="language"
+    />
   </mat-form-field>
   <mat-form-field>
     <mat-label>duration</mat-label>
@@ -53,11 +74,21 @@
   </mat-form-field>
   <mat-form-field>
     <mat-label>genre</mat-label>
-    <input matInput placeholder="Action,thriller" formControlName="genre" />
+    <input
+      matInput
+      type="string"
+      placeholder="Action,thriller"
+      formControlName="genre"
+    />
   </mat-form-field>
   <mat-form-field>
     <mat-label>release Date</mat-label>
-    <input matInput placeholder="2024-05-08" formControlName="releaseDate" />
+    <input
+      matInput
+      type="string"
+      placeholder="2024-05-08"
+      formControlName="releaseDate"
+    />
   </mat-form-field>
   <!-- <mat-form-field>
       <mat-label>cast</mat-label>
@@ -65,7 +96,12 @@
     </mat-form-field> -->
   <mat-form-field>
     <mat-label>director</mat-label>
-    <input matInput placeholder="director name" formControlName="director" />
+    <input
+      matInput
+      type="string"
+      placeholder="director name"
+      formControlName="director"
+    />
   </mat-form-field>
   <button mat-raised-button type="submit">Save</button>
 </form>
