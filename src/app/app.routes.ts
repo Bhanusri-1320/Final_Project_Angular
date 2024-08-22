@@ -10,6 +10,7 @@ import { SignupComponent } from './signup/signup.component';
 import { AddMovieComponent } from './add-movie/add-movie.component';
 import { EditComponent } from './edit/edit.component';
 import { authGuard } from './auth.guard';
+import { LogoutComponent } from './logout/logout.component';
 
 export const routes: Routes = [
   {
@@ -24,6 +25,10 @@ export const routes: Routes = [
   {
     path: 'movies',
     component: MovieListComponent,
+  },
+  {
+    path: 'logout',
+    component: LogoutComponent,
   },
   {
     path: 'signup',

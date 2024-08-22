@@ -49,6 +49,7 @@ export class HomeComponent {
         localStorage.setItem('roleId', data.roleId);
         localStorage.setItem('userName', data.userName);
       });
+      this.loginService.loginSuccess = true;
       // Handle login logic here (e.g., authentication)
       this.route.navigate(['/movies']);
     }

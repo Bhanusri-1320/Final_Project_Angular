@@ -15,7 +15,6 @@ export class ConformDialogComponent {
   onConfirm(): void {
     this.dialogRef.close(true);
   }
-
   onCancel(): void {
     this.dialogRef.close(false);
   }

@@ -5,6 +5,7 @@ const API = 'http://localhost:4000';
   providedIn: 'root',
 })
 export class LoginService {
+  loginSuccess: any = false;
   constructor() {}
   createUser(credentials: any) {
     return fetch(`${API}/user/signup`, {

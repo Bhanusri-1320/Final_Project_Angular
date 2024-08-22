@@ -4,11 +4,16 @@
   </div>
   <ul>
     <a routerLink="/">Home</a>
+    @if(!loginService.loginSuccess) {
     <a routerLink="/login">Login</a>
+    }
     <!-- <a routerLink="/signup">Signup</a> -->
     <a routerLink="/movies">Movies</a>
     <a routerLink="/history">History</a>
     <a routerLink="/addmovie">AddMovie</a>
+    @if(loginService.loginSuccess) {
+    <a routerLink="/logout">Logout</a>
+    }
   </ul>
 </nav>
 <router-outlet />
