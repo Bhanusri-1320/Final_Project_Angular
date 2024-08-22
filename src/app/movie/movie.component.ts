@@ -3,7 +3,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { ConformDialogComponent } from '../conform-dialog/conform-dialog.component';
+import { LoginService } from '../login.service';
 @Component({
   selector: 'app-movie',
   standalone: true,
@@ -60,12 +63,30 @@ export class MovieComponent {
   @Output() editMovieEvent = new EventEmitter<any>();
   @Input() roleId: any;
   // roleId = localStorage.getItem('roleId');
+  constructor(
+    private dialog: MatDialog,
+    private router: Router,
+    public loginService: LoginService
+  ) {}
   ngOnInit() {
     this.roleId = localStorage.getItem('roleId');
     console.log(this.roleId);
   }
-  deleteMovie() {
-    this.deleteMovieEvent.emit(this.movie);
+  openConfirmDialog(message: string): Promise<boolean> {
+    const dialogRef = this.dialog.open(ConformDialogComponent, {
+      width: '250px',
+      data: { message },
+    });
+
+    return dialogRef.afterClosed().toPromise();
+  }
+  async deleteMovie() {
+    const confirmed = await this.openConfirmDialog(
+      'Are you sure you want to delete?'
+    );
+    if (confirmed) {
+      this.deleteMovieEvent.emit(this.movie);
+    }
   }
   editMovie() {
     console.log('edit');
