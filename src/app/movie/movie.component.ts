@@ -58,8 +58,12 @@ export class MovieComponent {
   // };
   @Output() deleteMovieEvent = new EventEmitter<any>();
   @Output() editMovieEvent = new EventEmitter<any>();
-  roleId: any;
+  @Input() roleId: any;
   // roleId = localStorage.getItem('roleId');
+  ngOnInit() {
+    this.roleId = localStorage.getItem('roleId');
+    console.log(this.roleId);
+  }
   deleteMovie() {
     this.deleteMovieEvent.emit(this.movie);
   }

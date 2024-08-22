@@ -43,6 +43,7 @@ export class MovieListComponent {
   isLoading: boolean = true;
   msg = '';
   imageUrls!: Array<any>;
+  roleId: any;
   constructor(
     public moviesService: MoviesService,
     private router: Router,
@@ -52,10 +53,12 @@ export class MovieListComponent {
       search: '',
     });
   }
-
   // After Initialization of the component
   ngOnInit() {
     // localStorage.setItem('token', '');
+    console.log('movielit...');
+    this.roleId = localStorage.getItem('roleId');
+    console.log(this.roleId);
     this.loadMovies();
     console.log(this.moviesList);
     this.searchForm
@@ -68,7 +71,6 @@ export class MovieListComponent {
         console.log(data);
         this.moviesList = data;
       });
-    //main banner image url
   }
 
   loadMovies() {

@@ -26,7 +26,7 @@ import { LoginService } from '../login.service';
 export class HomeComponent {
   loginForm: FormGroup;
   users: { userName: string; password: string }[] = []; // Array to store users
-
+  roleId: any = 0;
   constructor(
     private loginService: LoginService,
     private fb: FormBuilder,
@@ -36,16 +36,19 @@ export class HomeComponent {
       userName: ['', Validators.required],
       password: ['', Validators.required],
     });
+    this.roleId = localStorage.getItem('roleId');
+    console.log('con', this.roleId);
   }
 
   onSubmit() {
     if (this.loginForm.valid) {
-      const { userName, password } = this.loginForm.value;
+      const { userName, password, roleId } = this.loginForm.value;
       this.users.push({ userName, password }); // Store the user credentials
-      console.log('Stored Users:', this.users);
-      this.loginService
-        .loginUser(this.loginForm.value)
-        .then((data) => localStorage.setItem('token', data.token));
+      this.loginService.loginUser(this.loginForm.value).then((data) => {
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('roleId', data.roleId);
+        localStorage.setItem('userName', data.userName);
+      });
       // Handle login logic here (e.g., authentication)
       this.route.navigate(['/movies']);
     }

@@ -58,6 +58,7 @@
         </div> -->
       </div>
       <div style="display: flex; justify-content: space-between">
+        @if(roleId==0) {
         <button
           mat-icon-button
           aria-label="Delete movie"
@@ -66,6 +67,7 @@
         >
           <mat-icon>edit</mat-icon>
         </button>
+        } @if(roleId==0) {
         <button
           mat-icon-button
           aria-label="Delete movie"
@@ -74,6 +76,7 @@
         >
           <mat-icon>delete</mat-icon>
         </button>
+        }
       </div>
     </mat-card-content>
   </mat-card>
