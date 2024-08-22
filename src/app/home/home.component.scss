@@ -2,7 +2,7 @@
 {
     padding-top: 100px;
     place-items: center;
-    padding-left: 700px;
+    padding-left: 500px;
     text-align: center;
 }
 .card
@@ -14,16 +14,22 @@
 .login-container {
     max-width: 400px;
     margin: auto;
-    padding: 20px;
+    // padding: 20px;
     text-align: center;
     padding-top: 150px;
   }
   
   mat-card {
-    padding: 20px;
+    // padding: 20px;
   }
   
   button {
     margin-top: 20px;
   }
   
+  .hole
+  {
+    display: flex;
+    width: 900px;
+    height: 360px;
+  }

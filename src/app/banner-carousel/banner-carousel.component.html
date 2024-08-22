@@ -1,22 +1,29 @@
-<div class="carousel-container">
+<div class="container">
+  <!-- <button class="button1" (click)="prevSlide()">
+    <i class="fa-solid fa-arrow-left"></i>
+  </button> -->
   <div>
-    <button class="prev-button" (click)="prevSlide()">&#10094;</button>
-  </div>
-  <div class="carousel-slides">
-    <div
-      class="carousel-slide"
-      *ngFor="let banner of banners; let i = index"
-      [ngClass]="{ active: i === currentIndex }"
+    <button
+      mat-raised-button
+      class="prev-button"
+      (click)="prevSlide()"
+      style="width: 50px; height: 50px"
     >
-      <img [src]="banner" alt="Banner Image" />
-    </div>
-    <!-- <div>
-      @for (item of banners; track $index) {
-      <img [src]="item" alt="" />
-      }
-    </div> -->
+      &#10094;
+    </button>
   </div>
+  <img id="banner" [src]="currentBanner" alt="Landscape Slider" />
   <div>
-    <button class="next-button" (click)="nextSlide()">&#10095;</button>
+    <button
+      mat-raised-button
+      class="next-button"
+      (click)="nextSlide()"
+      style="width: 50px; height: 50px"
+    >
+      &#10095;
+    </button>
   </div>
+  <!-- <button class="button2" (click)="nextSlide()">
+    <i class="fa-solid fa-arrow-right"></i>
+  </button> -->
 </div>

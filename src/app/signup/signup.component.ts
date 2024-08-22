@@ -47,10 +47,10 @@ export class SignupComponent {
       const { userName, password } = this.signupForm.value;
       // this.users.push({ userName, password }); // Store the user credentials
       console.log('Stored Users:', this.users);
-      this.loginService.createUser(this.signupForm.value);
-
-      // Handle login logic here (e.g., authentication)
-      this.route.navigate(['/movies']);
+      this.loginService
+        .createUser(this.signupForm.value)
+        .then(() => this.route.navigate(['/movies']))
+        .catch(() => this.route.navigate(['/login']));
     }
   }
   get userName() {
