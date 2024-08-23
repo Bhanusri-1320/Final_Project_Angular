@@ -1,6 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
-
+.noto-san {
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+  }
 html, body { height: 100%;
 overflow-x: hidden; 
-overflow-y: auto;}
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+overflow-y: auto;
+font-family: "Mukta", sans-serif;
+;}
+body { margin: 0}
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 900
+
