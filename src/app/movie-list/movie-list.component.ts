@@ -55,7 +55,6 @@ export class MovieListComponent {
   }
   // After Initialization of the component
   ngOnInit() {
-    // localStorage.setItem('token', '');
     console.log('movielit...');
     this.roleId = localStorage.getItem('roleId');
     console.log(this.roleId);

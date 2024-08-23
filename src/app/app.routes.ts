@@ -25,6 +25,7 @@ export const routes: Routes = [
   {
     path: 'movies',
     component: MovieListComponent,
+    canActivate: [authGuard],
   },
   {
     path: 'logout',
@@ -47,6 +48,7 @@ export const routes: Routes = [
   {
     path: 'history',
     component: HistoryComponent,
+    canActivate: [authGuard],
   },
   {
     path: 'movies/:id',

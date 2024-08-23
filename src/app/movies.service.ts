@@ -124,6 +124,7 @@ export class MoviesService {
   getSelectedData() {
     console.log(this.selectedDate);
     this.history.push(this.selectedDate);
+
     console.log(this.history);
     return this.selectedDate;
   }

@@ -5,7 +5,8 @@ import { MovieListComponent } from './movie-list/movie-list.component';
 import { LoginService } from './login.service';
 import { ConformDialogComponent } from './conform-dialog/conform-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
-
+import { Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -22,4 +23,9 @@ import { MatDialog } from '@angular/material/dialog';
 export class AppComponent {
   title = 'my-app';
   constructor(public loginService: LoginService, private dialog: MatDialog) {}
+  ngOnInit() {
+    if (localStorage.length > 0) {
+      this.loginService.loginSuccess = true;
+    }
+  }
 }

@@ -50,6 +50,7 @@ export class HomeComponent {
         localStorage.setItem('userName', data.userName);
       });
       this.loginService.loginSuccess = true;
+      console.log(this.loginService.loginSuccess);
       // Handle login logic here (e.g., authentication)
       this.route.navigate(['/movies']);
     }
