@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ConformDialogComponent } from '../conform-dialog/conform-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { LoginService } from '../login.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-logout',
@@ -25,6 +26,11 @@ export class LogoutComponent {
 
     return dialogRef.afterClosed().toPromise();
   }
+  private _snackBar = inject(MatSnackBar);
+
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action);
+  }
   async ngOnInit() {
     const confirmed = await this.openConfirmDialog(
       'Are you sure you want to logout?'
@@ -36,7 +42,9 @@ export class LogoutComponent {
       this.loginService.loginSuccess = false;
 
       localStorage.clear();
-      this.router.navigate([`/`]);
+      this.router
+        .navigate([`/`])
+        .then(() => this.openSnackBar(`logged Out successfully.`, 'ok'));
     } else {
       this.router.navigate(['/movies']);
     }

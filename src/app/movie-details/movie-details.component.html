@@ -9,7 +9,7 @@
       height: '65vh',
       width: '100vw',
       'background-size': 'cover',
-      'background-position': 'center',
+      'background-position': 'right center',
       'background-repeat': 'no-repeat',
       color: 'white',
       'padding-top': '100px'
@@ -73,7 +73,13 @@
           <img
             [src]="item.profilePic"
             alt=""
-            style="height: 200px; width: 200px; border-radius: 50%"
+            style="
+              height: 200px;
+              width: 200px;
+              border-radius: 50%;
+              overflow: hidden;
+              object-fit: cover;
+            "
           />
         </div>
         <div>

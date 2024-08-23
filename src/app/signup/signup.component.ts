@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -12,6 +12,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { Router, RouterLink } from '@angular/router';
 import { LoginService } from '../login.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-signup',
@@ -50,8 +51,14 @@ export class SignupComponent {
       this.loginService
         .createUser(this.signupForm.value)
         .then(() => this.route.navigate(['/movies']))
+        .then(() => this.openSnackBar(`signup successfull.`, 'ok'))
         .catch(() => this.route.navigate(['/login']));
     }
+  }
+  private _snackBar = inject(MatSnackBar);
+
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action);
   }
   get userName() {
     return this.signupForm.get('userName');
