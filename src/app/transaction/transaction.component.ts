@@ -14,5 +14,6 @@ export class TransactionComponent {
   constructor(private moviesService: MoviesService) {}
   ngOnInit() {
     this.selectedData = this.moviesService.getSelectedData();
+    console.log(this.selectedData);
   }
 }

@@ -2,10 +2,28 @@
 <div class="main">
   <mat-card appearance="outlined" class="card">
     <mat-card-content>
-      <h2>Details</h2>
-      <h1><span>Theater:</span>{{ selectedData.theaterName }}</h1>
-      <h2><span>Timings:</span>{{ selectedData.timing }}</h2>
-      <h2><span>Date:</span>{{ selectedData.date }}</h2>
+      <div class="flex">
+        <div style="width: 50px">
+          <h1 style="font-size: 70px; line-height: 70px">Cinema Ticket</h1>
+          <!-- <div>
+            <h3 style="padding-left: 80px; border-color: black">$250</h3>
+          </div> -->
+        </div>
+        <!-- <h2>Details</h2> -->
+        <div style="padding-top: 20px; padding-left: 190px">
+          <h1><span>Theater:</span>{{ selectedData.theaterName }}</h1>
+          <h2><span>Timings:</span>{{ selectedData.timing }}</h2>
+          <h2><span>Date:</span>{{ selectedData.date }}</h2>
+        </div>
+        <div>
+          <img
+            width="150px"
+            height="150px"
+            src="https://res.cloudinary.com/jerrick/image/upload/d_642250b563292b35f27461a7.png,f_jpg,fl_progressive,q_auto,w_1024/5eea100083cb3e001d40aadf.png"
+            alt=""
+          />
+        </div>
+      </div>
     </mat-card-content>
   </mat-card>
 </div>

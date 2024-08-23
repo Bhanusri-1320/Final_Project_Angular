@@ -14,6 +14,7 @@ import { SnackBarComponent } from '../snack-bar/snack-bar.component';
 import { CommonModule } from '@angular/common'; // Import CommonModule
 import { HistoryComponent } from '../history/history.component';
 import { HistoryService } from '../history.service';
+import { LoginService } from '../login.service';
 @Component({
   selector: 'app-bookticket',
   standalone: true,
@@ -41,7 +42,8 @@ export class BookticketComponent {
     private moviesService: MoviesService,
     private router: Router,
     private snackBar: MatSnackBar,
-    private historyService: HistoryService
+    private historyService: HistoryService,
+    private loginService: LoginService
   ) {}
   ngOnInit() {
     this.ticketsData = this.moviesService.getTicketsDataById('1');
@@ -56,7 +58,10 @@ export class BookticketComponent {
     console.log(this.selectedData);
   }
   navigateTo() {
-    this.historyService.addHistory({ ...this.selectedData, userName: '' });
+    this.historyService.addHistory({
+      ...this.selectedData,
+      userName: this.loginService.userName,
+    });
     this.snackBar.openFromComponent(SnackBarComponent, {
       duration: 5000, // Duration in milliseconds
       verticalPosition: 'top', // Position on the screen

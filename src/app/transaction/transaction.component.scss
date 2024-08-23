@@ -1,12 +1,15 @@
 .card
 {
     padding-left: 10px;
-    width: 500px;
+    width: 800px;
+    background-color: antiquewhite;
+    border-radius: 20px;
+    height: 200px;
 }
 .main
 {
     padding-top: 80px;
-    padding-left: 700px;
+    padding-left: 600px;
     place-content: center;
 }
 .centered-text {
@@ -14,4 +17,8 @@
     text-align: center;
     margin: 0; /* Optional: remove default margin */
   }
-  
+  .flex
+  {
+    display: flex;
+    justify-content: space-between;
+  }

@@ -1,15 +1,40 @@
 <div class="main">
-  <mat-card class="card">
-    <mat-card-content>
-      <div class="content">
-        @for (item of history; track $index) {
-        <div>
-          <h1><span>TheaterName: </span>{{ item.theaterName }}</h1>
-          <h2><span>Timings: </span>{{ item.timing }}</h2>
-          <h4><span>Date: </span>{{ item.date }}</h4>
-        </div>
-        }
-      </div>
-    </mat-card-content>
-  </mat-card>
+  <div class="card">
+    <div class="content">
+      @for (item of history; track $index) {
+      <mat-card style="width: 830px">
+        <mat-card-content>
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              background-color: antiquewhite;
+              padding-left: 10px;
+              width: 800px;
+              border-radius: 20px;
+              height: 200px;
+            "
+          >
+            <div style="width: 50px">
+              <h1 style="font-size: 70px; line-height: 70px">Cinema Ticket</h1>
+            </div>
+            <div style="padding-top: 20px; padding-left: 190px">
+              <h1><span>TheaterName: </span>{{ item.theaterName }}</h1>
+              <h2><span>Timings: </span>{{ item.timing }}</h2>
+              <h4><span>Date: </span>{{ item.date }}</h4>
+            </div>
+            <div>
+              <img
+                width="150px"
+                height="150px"
+                src="https://res.cloudinary.com/jerrick/image/upload/d_642250b563292b35f27461a7.png,f_jpg,fl_progressive,q_auto,w_1024/5eea100083cb3e001d40aadf.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+      }
+    </div>
+  </div>
 </div>
