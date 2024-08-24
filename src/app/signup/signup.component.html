@@ -3,6 +3,7 @@
     <mat-card-title style="color: #f84464">Signup</mat-card-title>
     <mat-card-content>
       <br />
+      <p>Please Signup to proceed</p>
       <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
         <mat-form-field style="width: 300px">
           <mat-label>Username</mat-label>
@@ -22,7 +23,7 @@
         <br />
         <mat-form-field style="width: 300px">
           <mat-label>conform Password</mat-label>
-          <input matInput type="password" formControlName="password" />
+          <input matInput type="password" formControlName="conformPassword" />
           @if(password?.touched && password?.hasError('required') ){
           <mat-error>password is <strong>required</strong></mat-error>
           }

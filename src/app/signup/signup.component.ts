@@ -41,18 +41,22 @@ export class SignupComponent {
     this.signupForm = this.fb.group({
       userName: ['', Validators.required],
       password: ['', Validators.required],
+      conformPassword: ['', Validators.required],
     });
   }
   onSubmit() {
-    if (this.signupForm.valid) {
+    if (
+      this.signupForm.valid &&
+      this.signupForm.value.password == this.signupForm.value.conformPassword
+    ) {
       const { userName, password } = this.signupForm.value;
       // this.users.push({ userName, password }); // Store the user credentials
       console.log('Stored Users:', this.users);
       this.loginService
         .createUser(this.signupForm.value)
-        .then(() => this.route.navigate(['/movies']))
+        .then(() => this.route.navigate(['/login']))
         .then(() => this.openSnackBar(`signup successfull.`, 'ok'))
-        .catch(() => this.route.navigate(['/login']));
+        .catch(() => this.route.navigate(['/signup']));
     }
   }
   private _snackBar = inject(MatSnackBar);

@@ -22,10 +22,12 @@ import { isPlatformBrowser } from '@angular/common';
 })
 export class AppComponent {
   title = 'my-app';
+  roleId: any;
   constructor(public loginService: LoginService, private dialog: MatDialog) {}
   ngOnInit() {
     if (localStorage.length > 0) {
       this.loginService.loginSuccess = true;
+      this.roleId = localStorage.getItem('token');
     }
   }
 }

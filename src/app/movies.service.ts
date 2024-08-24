@@ -2,10 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { json } from 'stream/consumers';
 
-// const API = 'https://final-prj-node.onrender.com';
-const API = 'http://localhost:4000';
-// const API = 'https://final-prj-node-1.onrender.com';
-// const API = 'https://669a42939ba098ed61fef789.mockapi.io';
+// const API = 'http://localhost:4000';
+const API = 'https://final-prj-node-2.onrender.com';
+
 @Injectable({
   providedIn: 'root',
 })

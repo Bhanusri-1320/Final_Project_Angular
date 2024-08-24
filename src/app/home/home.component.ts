@@ -59,13 +59,17 @@ export class HomeComponent {
           localStorage.setItem('userName', data.userName);
         })
         .then(() => {
-          this.route.navigate(['/movies']);
-          this.openSnackBar(
-            ` Hi, ${this.loginForm.value.userName}, you have loggedin successfully.`,
-            'ok'
-          );
+          if (localStorage.getItem('token') != 'undefined') {
+            this.route.navigate(['/movies']);
+            this.loginService.loginSuccess = true;
+            this.openSnackBar(
+              ` Hi, ${this.loginForm.value.userName}, you have loggedin successfully.`,
+              'ok'
+            );
+          } else {
+            this.route.navigate([`/signup`]);
+          }
         });
-      this.loginService.loginSuccess = true;
       console.log(this.loginService.loginSuccess);
 
       // Handle login logic here (e.g., authentication)
