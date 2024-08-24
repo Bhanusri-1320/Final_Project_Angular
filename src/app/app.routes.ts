@@ -13,10 +13,10 @@ import { authGuard } from './auth.guard';
 import { LogoutComponent } from './logout/logout.component';
 
 export const routes: Routes = [
-  {
-    path: '',
-    component: BasicComponent,
-  },
+  // {
+  //   path: '',
+  //   component: BasicComponent,
+  // },
 
   {
     path: 'login',

@@ -43,7 +43,7 @@ export class LogoutComponent {
 
       localStorage.clear();
       this.router
-        .navigate([`/`])
+        .navigate([`/login`])
         .then(() => this.openSnackBar(`logged Out successfully.`, 'ok'));
     } else {
       this.router.navigate(['/movies']);

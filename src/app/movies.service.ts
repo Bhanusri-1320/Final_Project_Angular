@@ -1,15 +1,17 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { json } from 'stream/consumers';
 
 // const API = 'https://final-prj-node.onrender.com';
-// const API = 'http://localhost:4000';
-const API = 'https://final-prj-node-1.onrender.com';
+const API = 'http://localhost:4000';
+// const API = 'https://final-prj-node-1.onrender.com';
 // const API = 'https://669a42939ba098ed61fef789.mockapi.io';
 @Injectable({
   providedIn: 'root',
 })
 export class MoviesService {
   selectedDate: any = {
+    title: '',
     theaterName: '',
     timing: '',
     date: '',
@@ -117,15 +119,12 @@ export class MoviesService {
     return fetch(`${API}/movies/${id}`).then((res) => res.json());
   }
   getTicketsDataById(id: any) {
-    console.log(id);
-    const movie = this.TicketsData.find((res) => res.movieId === id); // Use === for strict equality
-    console.log(movie);
-    return movie;
+    console.log('tickets data', id);
+    return fetch(`${API}/tickets/${id}`).then((res) => res.json());
   }
   getSelectedData() {
     console.log(this.selectedDate);
     this.history.push(this.selectedDate);
-
     console.log(this.history);
     return this.selectedDate;
   }

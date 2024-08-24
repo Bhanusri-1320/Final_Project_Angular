@@ -1,0 +1,28 @@
+.hole
+{
+    height: 100vh;
+    background-color: #f84464;
+    margin: 0%;
+    text-align: center;
+    place-content: center;
+    margin: auto auto;
+    padding-left: 150px;
+}
+.card {
+    background-image: url(https://uploads-ssl.webflow.com/6294ab2597e2574bc689fe3e/62dd62b90df088942715fe95_abstract-02.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; /* Ensure the image covers the entire element */
+    background-position: center; /* Center the image */
+    border-radius: 20px;
+    width: 90%;
+    height: 80%;
+    background-color: rgb(72, 69, 69); /* Fallback color if image doesn't load */
+    /* Ensure padding and margin are handled if necessary */
+    padding: 0; 
+    margin: 0;
+}
+
+
+
+
+

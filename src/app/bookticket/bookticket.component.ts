@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MoviesService } from '../movies.service';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
@@ -15,6 +15,7 @@ import { CommonModule } from '@angular/common'; // Import CommonModule
 import { HistoryComponent } from '../history/history.component';
 import { HistoryService } from '../history.service';
 import { LoginService } from '../login.service';
+import { title } from 'process';
 @Component({
   selector: 'app-bookticket',
   standalone: true,
@@ -33,6 +34,7 @@ import { LoginService } from '../login.service';
 })
 export class BookticketComponent {
   ticketsData: any;
+  id: any;
   selectedData: any = {
     theaterName: '',
     timing: '',
@@ -43,10 +45,15 @@ export class BookticketComponent {
     private router: Router,
     private snackBar: MatSnackBar,
     private historyService: HistoryService,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private route: ActivatedRoute
   ) {}
   ngOnInit() {
-    this.ticketsData = this.moviesService.getTicketsDataById('1');
+    this.id = this.route.snapshot.paramMap.get('id') as string;
+    console.log(this.id);
+    this.moviesService
+      .getTicketsDataById(this.id)
+      .then((data) => (this.ticketsData = data));
     console.log(this.ticketsData);
   }
   selectTiming(timing: string, name: any) {
@@ -61,6 +68,7 @@ export class BookticketComponent {
     this.historyService.addHistory({
       ...this.selectedData,
       userName: this.loginService.userName,
+      title: this.ticketsData.title,
     });
     this.snackBar.openFromComponent(SnackBarComponent, {
       duration: 5000, // Duration in milliseconds
@@ -72,6 +80,9 @@ export class BookticketComponent {
       `/movies/booktickets/final/${this.ticketsData.movieId}`,
     ]);
     console.log(this.selectedData);
-    this.moviesService.selectedDate = this.selectedData;
+    this.moviesService.selectedDate = {
+      ...this.selectedData,
+      title: this.ticketsData.title,
+    };
   }
 }
