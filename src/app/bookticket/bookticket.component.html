@@ -8,25 +8,24 @@
         <h2>Date:</h2>
         <h4>{{ ticketsData.date }}</h4>
         <div>
-          <h3>select AvailableTheaters:</h3>
+          <h3>Select Available Theaters:</h3>
           @for (ite of ticketsData.availableTheaters; track $index) {
           <i class="fa-solid fa-film"></i>
-          <h2>Theater:{{ ite.theaterName }}</h2>
+          <h2>Theater: {{ ite.theaterName }}</h2>
           <div class="timings">
-            <!-- <h3>select Timings:</h3> -->
             @for (item of ticketsData.timings; track $index) {
-            <div class="button" (click)="selectTiming(item, ite.theaterName)">
+            <div
+              class="button"
+              (click)="selectTiming(item, ite.theaterName)"
+              [ngClass]="{
+                selected:
+                  selectedData.theaterName === ite.theaterName &&
+                  selectedData.timing === item
+              }"
+            >
               <mat-card appearance="outlined">
                 <mat-card-content>
                   <h4 class="time">{{ item }}</h4>
-                  @if(item?.click) {
-                  <style>
-                    .time {
-                      border: 5px #f84464;
-                      /* background: #f84464; */
-                    }
-                  </style>
-                  }
                 </mat-card-content>
               </mat-card>
             </div>
@@ -36,24 +35,14 @@
         </div>
       </div>
       <br />
-      @if(selectedData.timing) {
       <button
         mat-raised-button
+        [disabled]="!selectedData.timing"
         style="background-color: #f84464"
         (click)="navigateTo()"
       >
         Book Ticket
       </button>
-      } @else {
-      <button
-        mat-raised-button
-        disabled
-        style="background-color: #f84464"
-        (click)="navigateTo()"
-      >
-        Book Ticket
-      </button>
-      }
     </mat-card-content>
   </mat-card>
 </div>
